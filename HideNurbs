@@ -1,0 +1,13 @@
+string $myPanel = `getPanel -wf`;
+
+if(`getPanel -to $myPanel` == "modelPanel") {
+
+	if(`modelEditor -q -nurbsCurves $myPanel` == 0) {
+	
+		modelEditor -e -nurbsCurves 1 $myPanel;
+	}
+	else {
+	
+		modelEditor -e -nurbsCurves 0 $myPanel;
+	}
+}        
